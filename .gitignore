@@ -4,6 +4,10 @@
 # OS X
 .DS_Store
 
+# Web Starter Kit
+.tmp
+dist
+
 # Logs
 logs
 *.log
