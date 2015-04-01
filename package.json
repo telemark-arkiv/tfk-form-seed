@@ -12,7 +12,9 @@
     "node": ">=0.12.0"
   },
   "scripts": {
-    "setup": "node setup.js",
+    "setup": "npm install && gulp",
+    "dev": "gulp serve",
+    "build": "gulp",
     "start": "node standalone.js",
     "test": "mocha --reporter spec test/*.js"
   },
