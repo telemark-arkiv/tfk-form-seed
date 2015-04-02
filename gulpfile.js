@@ -123,7 +123,7 @@ gulp.task('html', function () {
     .pipe($.if('*.css', $.uncss({
       html: [
         'app/index.html',
-        'app/styleguide.html'
+        'app/personvern.html'
       ],
       // CSS Selectors for UnCSS to ignore
       ignore: [
