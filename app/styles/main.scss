@@ -365,6 +365,35 @@ main {
   src: local('Roboto Condensed Bold Italic'), local('RobotoCondensed-BoldItalic'), url(/fonts/RobotoCondensed-BoldItalic.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-BoldItalic.woff) format('woff');
 }
 
+/* Local varieties */
+
+.app-bar {
+  background-color: white;
+  color: black;
+}
+
+.app-bar-container {
+  background-color: white;
+  color: black;
+}
+
+.app-bar .logo {
+  color: black;
+}
+
+.navdrawer-container {
+  background-color: #ffd520;
+  color: black;
+}
+
+.navdrawer-container ul li a {
+  color: black;
+}
+
+.navdrawer-container ul li.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 label {
   display: block;
   margin-bottom: 0;
