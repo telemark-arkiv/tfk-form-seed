@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react/addons');
-var doSubmitForm = require('./utils/submitform');
+var doSubmitForm = require('../utils/submitform');
 var config = require('../config');
 
 var App = React.createClass({
@@ -59,6 +59,7 @@ var App = React.createClass({
           <fieldset>
             <legend>Klagen gjelder</legend>
             <select name="klagegrunnlag" valueLink={this.linkState('klagegrunnlag')}>
+              <option value="">Velg klagegrunnlag</option>
               <option value="Eksamenskarakter skriftlig">Eksamenskarakter skriftlig</option>
               <option value="Muntlig eksamen">Muntlig eksamen</option>
               <option value="Standpunktkarakter">Standpunktkarakter</option>
