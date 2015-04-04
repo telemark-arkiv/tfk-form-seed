@@ -26,3 +26,7 @@ $ npm run build
 ```
 $ npm run start
 ```
+
+See form at
+
+[http://localhost:3000/karakterklage](http://localhost:3000/karakterklage)
