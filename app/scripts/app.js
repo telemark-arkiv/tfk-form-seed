@@ -2,26 +2,24 @@
 
 var React = require('react/addons');
 var doSubmitForm = require('./utils/submitform');
+var config = require('../config');
 
 var App = React.createClass({
   mixins: [React.addons.LinkedStateMixin],
   getInitialState: function() {
-    return {
-      personnummer: '',
-      navn: '',
-      adresse: '',
-      klagegrunnlag: '',
-      fagkode: '',
-      fag: '',
-      dato: '',
-      skolenavn: '',
-      skoleadresse: '',
-      skoletelefon: '',
-      skolemail: ''
+    return config.initialState;
+  },
+  componentDidUpdate: function(prevProps, prevState) {
+    localStorage[config.formId] = JSON.stringify(this.state);
+  },
+  componentDidMount: function() {
+    if (localStorage.getItem(config.formId)) {
+      this.setState(JSON.parse(localStorage.getItem(config.formId)));
     }
   },
   submitForm: function(e) {
     e.preventDefault();
+    var self = this;
     var payload = {
       personnummer: this.state.personnummer,
       navn: this.state.navn,
@@ -39,8 +37,8 @@ var App = React.createClass({
       if (err) {
         console.error(err);
       } else {
-        console.log('Posted!');
-        console.log(data);
+        localStorage.clear();
+        self.setState(config.initialState);
       }
     });
   },
