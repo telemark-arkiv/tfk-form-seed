@@ -15,7 +15,8 @@ var config = {
     skoleadresse: '',
     skoletelefon: '',
     skolemail: ''
-  }
+  },
+  SERVER_PORT: 3000
 };
 
 module.exports = config;
