@@ -26,5 +26,3 @@ $ npm run build
 ```
 $ npm run start
 ```
-
-Not yet implemented
