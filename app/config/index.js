@@ -1,7 +1,7 @@
 'use strict';
 
 var config = {
-  formId: 'tkf-karakterklage-1.0.0',
+  formId: 'tkf-karakterklage',
   formName: 'Klage på karakter',
   initialState: {
     personnummer: '',

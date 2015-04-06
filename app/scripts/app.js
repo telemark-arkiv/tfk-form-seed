@@ -3,6 +3,8 @@
 var React = require('react/addons');
 var doSubmitForm = require('../utils/submitform');
 var config = require('../config');
+var pkg = require('../../package.json');
+var versionNumber = config.formId + '-' + pkg.version;
 
 var App = React.createClass({
   mixins: [React.addons.LinkedStateMixin],
@@ -13,8 +15,8 @@ var App = React.createClass({
     localStorage[config.formId] = JSON.stringify(this.state);
   },
   componentDidMount: function() {
-    if (localStorage.getItem(config.formId)) {
-      this.setState(JSON.parse(localStorage.getItem(config.formId)));
+    if (localStorage.getItem(versionNumber)) {
+      this.setState(JSON.parse(localStorage.getItem(versionNumber)));
     }
   },
   submitForm: function(e) {
@@ -31,7 +33,9 @@ var App = React.createClass({
       skolenavn: this.state.skolenavn,
       skoleadresse: this.state.skoleadresse,
       skoletelefon: this.state.skoletelefon,
-      skolemail: this.state.skolemail
+      skolemail: this.state.skolemail,
+      formId: config.formId,
+      formVersion: pkg.version
     };
     doSubmitForm(payload, function(err, data){
       if (err) {
