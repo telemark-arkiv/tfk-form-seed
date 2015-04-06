@@ -1,8 +1,8 @@
 'use strict';
 
 var Hapi = require('hapi');
-var config = require('./app/config');
 var server = new Hapi.Server();
+var config = require('./config');
 var karakterklageService = require('./index');
 
 server.connection({

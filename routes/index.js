@@ -9,6 +9,15 @@ var routes = [
         path: 'dist'
       }
     }
+  },
+  {
+    method: 'GET',
+    path: '/fonts/{param*}',
+    handler: {
+      directory: {
+        path: 'dist/fonts'
+      }
+    }
   }
 ];
 
