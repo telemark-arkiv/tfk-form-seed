@@ -6,6 +6,22 @@ var config = require('../../config');
 var pkg = require('../../package.json');
 var versionNumber = config.formId + '-' + pkg.version;
 
+function showSchool(state){
+  var className = 'hidden';
+  if(state === 'Standpunktkarakter' || state === 'Karakter ved lokalgitt eksamen'){
+    className = '';
+  }
+  return className;
+}
+
+function showExams(state){
+  var className = 'hidden';
+  if(state === 'Eksamenskarakter skriftlig' || state === 'Muntlig eksamen'){
+    className = '';
+  }
+  return className;
+}
+
 var App = React.createClass({
   mixins: [React.addons.LinkedStateMixin],
   getInitialState: function() {
@@ -70,8 +86,8 @@ var App = React.createClass({
               <option value="Karakter ved lokalgitt eksamen">Karakter ved lokalgitt eksamen</option>
             </select>
           </fieldset>
-          <fieldset>
-            <legend>Faginformasjon</legend>
+          <fieldset className={showExams(this.state.klagegrunnlag)}>
+            <legend>Eksamensinformasjon</legend>
             <label htmlFor="fagkode">Fagkode</label>
             <input type="text" name="fagkode" placeholder="Fagkode" id="fagkode" valueLink={this.linkState('fagkode')} />
             <label htmlFor="fag">Fag</label>
@@ -79,7 +95,7 @@ var App = React.createClass({
             <label htmlFor="dato">Eksamensdato</label>
             <input type="date" name="dato" placeholder="Eksamensdato" id="dato" valueLink={this.linkState('dato')} />
           </fieldset>
-          <fieldset>
+          <fieldset className={showSchool(this.state.klagegrunnlag)}>
             <legend>Skoleinformasjon</legend>
             <label htmlFor="skolenavn">Skolens navn</label>
             <input type="text" name="skolenavn" placeholder="Skolens navn" id="skolenavn" valueLink={this.linkState('skolenavn')} />
