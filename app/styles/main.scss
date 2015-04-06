@@ -408,7 +408,7 @@ input, textarea {
 .btn {
   margin-top: 1rem;
   display: inline-block;
-  background: #ffd520;
+  background-color: #ffd520;
   color: black;
   line-height: 1;
   font-weight: bold;
@@ -416,3 +416,17 @@ input, textarea {
   border: 0;
   text-align: center;
 }
+
+.app-bar button {
+  background-color: #ffd520;
+  color: black;
+}
+
+.app-bar button:hover {
+  background-color: #ffe023;
+}
+
+.app-bar button:focus {
+  background-color: #ffe023;;
+}
+
