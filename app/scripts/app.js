@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react/addons');
-var doSubmitForm = require('../utils/submitform');
+var doSubmitForm = require('../../utils/submitform');
 var config = require('../../config');
 var pkg = require('../../package.json');
 var versionNumber = config.formId + '-' + pkg.version;
