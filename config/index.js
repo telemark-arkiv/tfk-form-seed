@@ -16,7 +16,9 @@ var config = {
     skoletelefon: '',
     skolemail: ''
   },
-  SERVER_PORT: 3000
+  SERVER_PORT: 3000,
+  API_POST_HOST: 'api.t-fk.no',
+  API_POST_PATH: '/forms'
 };
 
 module.exports = config;

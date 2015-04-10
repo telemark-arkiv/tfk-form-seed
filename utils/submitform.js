@@ -1,6 +1,7 @@
 'use strict';
 
 var https = require('https');
+var config = require('../config');
 
 function submitForm(payload, callback){
 
@@ -12,8 +13,8 @@ function submitForm(payload, callback){
   };
 
   var options = {
-    host: 'api.t-fk.no',
-    path: '/forms',
+    host: config.API_POST_HOST,
+    path: config.API_POST_PATH,
     method: 'POST',
     headers: headers
   };
