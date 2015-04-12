@@ -35,6 +35,14 @@ var App = React.createClass({
       this.setState(JSON.parse(localStorage.getItem(versionNumber)));
     }
   },
+  cleanUp: function(){
+    localStorage.clear();
+    this.setState(config.initialState);
+  },
+  cancelForm: function(e){
+    e.preventDefault();
+    this.cleanUp();
+  },
   submitForm: function(e) {
     e.preventDefault();
     var self = this;
@@ -57,8 +65,7 @@ var App = React.createClass({
       if (err) {
         console.error(err);
       } else {
-        localStorage.clear();
-        self.setState(config.initialState);
+        self.cleanUp();
       }
     });
   },
@@ -106,7 +113,7 @@ var App = React.createClass({
             <label htmlFor="skolemail">Skolens e-postadresse</label>
             <input type="text" name="skolemail" placeholder="skolemail" id="skolemail" valueLink={this.linkState('skolemail')} />
           </fieldset>
-          <button className="btn">Send klage</button>
+          <button className="btn">Send klage</button> <button className="btn" onClick={this.cancelForm}>Avbryt</button>
         </form>
       </div>
     );
